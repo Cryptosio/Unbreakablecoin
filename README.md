@@ -3,7 +3,7 @@ Unbreakablecoin Core integration/staging tree
 
 [![Build Status](https://travis-ci.org/ahmedbodi/unbreakablecoin.svg?branch=master)](https://travis-ci.org/ahmedbodi/unbreakablecoin)
 
-https://www.unbreakablecoin.org
+http://www.unbreakablecoin.com
 
 What is Unbreakablecoin?
 ----------------
