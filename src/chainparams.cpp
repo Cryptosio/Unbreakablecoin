@@ -141,8 +141,8 @@ public:
 		genesis.nNonce   = 2083236893;
 
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x1985b8a3f607b081ceb7249611a35ba04824026ccba02fece4e8687afd5a990e"));
-        assert(genesis.hashMerkleRoot == uint256("0xe417a7bd4b5d0c0f27caba6bc16963c9dac23a970702336620cc71196f193dfb"));
+        assert(hashGenesisBlock == uint256("0x000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f"));
+        // assert(genesis.hashMerkleRoot == uint256("0xe417a7bd4b5d0c0f27caba6bc16963c9dac23a970702336620cc71196f193dfb"));
 
         vSeeds.push_back(CDNSSeedData("ispace.co.uk", "seed.ispace.co.uk"));
         vSeeds.push_back(CDNSSeedData("multipool.us", "seed.multipool.us"));
