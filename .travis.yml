@@ -60,4 +60,12 @@ after_script:
 - echo $TRAVIS_COMMIT_LOG
 - cd $HOME && tar -zcvf Unbreakablecoin-$HOST.tar.gz $HOME/bin && ls -la $HOME
 notifications:
+-  irc: chat.freenode.net#multicoin-co
+ -deploy:
+ -  provider: releases
+ -  api_key:
+ -    secure: gz5t1wPEk1nfrqmlMC/mJwoik6SrZdSGX8Vj5ZpX2PEX3iYtv4mn/Wy0fnAXb/zFH/spo9jJzDT5CL12O9H7dqWaPXo4vHPtXQbtp+gNzAEGF+rk9xEeWin5PUydj1LgyLx+R+2DGkU/B48GF7j6/greWvBAIT/piBDo9Wqib5ZFKBXI5evEc3pggUvCOM9hypYpd7gN4baWIugRCGCjOnBJGfNkiS4pXuDlQzMETraNuMLGdMHFslkbLDK3CDyDxzehn9bJvcmi6RcwWPYPt4P3McMtdYZUF4Xjke9TTprdWxX1sg6xNjVeDfZ3jQVRpZnkCfRI6sYRGeqUacrTfLPq+PXEeYLa+sZu4sAW3dFl/XM4Np/opqIzlPvT3Fa0xbZfCM+gS5hXUThKj2RVajhh1lamQMZaYtt4g3djNmCGnCZoyGsIDFzfiQrPseGH13ad7NXoHBMacfyYAsCsfpopDcDq7w1N98BDhQBRCzWJ1HxrWxGVkg9INz+mGyqcOTPCjhFiGhCvKEmSYv8sp8Ce/5m7r6mORtUAGY5OxmcXSqu9E1ucQJu3iDbNlQlhr4pwOL9LImI1E/D/C8PCDjsSEhued3QJRZLe6O8SQytgAgdq1EOoNarMyYHgLEi/MmWeT76ufKwC4QKPdDXEtwLlPM8qRPk3/42mDN+BVSg=
+ -  file: $HOME/Unbreakablecoin-$HOST.tar.gz
+ -  on:
+ -    repo: Cryptosio/unbreakablecoin
   irc: chat.freenode.net#multicoin-co
