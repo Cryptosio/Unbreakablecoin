@@ -102,7 +102,7 @@ public:
         pchMessageStart[3] = 0xb1;
         vAlertPubKey = ParseHex("");
         nDefaultPort = 9336;
-        bnProofOfWorkLimit = ~uint256(0) >> 32;
+        bnProofOfWorkLimit = ~uint256(0) >> 1;
         nSubsidyHalvingInterval = 800000;
         nEnforceBlockUpgradeMajority = 750;
         nRejectBlockOutdatedMajority = 950;
@@ -136,12 +136,12 @@ public:
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime    = 1395135289;
-        genesis.nBits    = 0x1d00ffff;
-		genesis.nNonce   = 2083236893;
+        genesis.nTime    = 1296688602;
+        genesis.nBits    = 0x207fffff;
+		genesis.nNonce   = 2;
 
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f"));
+        assert(hashGenesisBlock == uint256("0x0f9188f13cb7b2c71f2a335e3a4fc328bf5beb436012afca590b1a11466e2206"));
         // assert(genesis.hashMerkleRoot == uint256("0xe417a7bd4b5d0c0f27caba6bc16963c9dac23a970702336620cc71196f193dfb"));
 
         vSeeds.push_back(CDNSSeedData("ispace.co.uk", "seed.ispace.co.uk"));
@@ -151,8 +151,8 @@ public:
         base58Prefixes[PUBKEY_ADDRESS] = list_of(0);
         base58Prefixes[SCRIPT_ADDRESS] = list_of(5);
         base58Prefixes[SECRET_KEY] =     list_of(128);
-        base58Prefixes[EXT_PUBLIC_KEY] = list_of(0x04)(0x88)(0xB2)(0x1E);
-        base58Prefixes[EXT_SECRET_KEY] = list_of(0x04)(0x88)(0xAD)(0xE4);
+        base58Prefixes[EXT_PUBLIC_KEY] = list_of(0xfa)(0xbf)(0xb5)(0xda);
+        base58Prefixes[EXT_SECRET_KEY] = list_of(0xfa)(0xbf)(0xb5)(0xda);
 
         convertSeed6(vFixedSeeds, pnSeed6_main, ARRAYLEN(pnSeed6_main));
 
