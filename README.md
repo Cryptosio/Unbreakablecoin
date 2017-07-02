@@ -15,7 +15,7 @@ out collectively by the network. Unbreakablecoin Core is the name of open source
 software which enables the use of this currency.
 
 For more information, as well as an immediately useable, binary version of
-the Unbreakablecoin Core software, see https://www.unbreakablecoin.com.
+the Unbreakablecoin Core software, see http://www.unbreakablecoin.com.
 
 License
 -------
