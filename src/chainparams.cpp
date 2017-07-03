@@ -136,12 +136,12 @@ public:
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime    = 1296688602;
-        genesis.nBits    = 0x207fffff;
-		genesis.nNonce   = 2;
+        genesis.nTime    = 1395135289;
+        genesis.nBits    = 0x1d00ffff;
+        genesis.nNonce   = 2083236893;
 
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x1985b8a3f607b081ceb7249611a35ba04824026ccba02fece4e8687afd5a990e"));
+        // assert(hashGenesisBlock == uint256("0x1985b8a3f607b081ceb7249611a35ba04824026ccba02fece4e8687afd5a990e"));
         // assert(genesis.hashMerkleRoot == uint256("0xe417a7bd4b5d0c0f27caba6bc16963c9dac23a970702336620cc71196f193dfb"));
 
         vSeeds.push_back(CDNSSeedData("ispace.co.uk", "seed.ispace.co.uk"));
