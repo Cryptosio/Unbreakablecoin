@@ -387,7 +387,7 @@ boost::filesystem::path GetDefaultDataDir()
     // Unix: ~/.bitcoin
 #ifdef WIN32
     // Windows
-    return GetSpecialFolderPath(CSIDL_APPDATA) / "Bitcoin";
+    return GetSpecialFolderPath(CSIDL_APPDATA) / "Unbreakablecoin";
 #else
     fs::path pathRet;
     char* pszHome = getenv("HOME");
@@ -399,10 +399,10 @@ boost::filesystem::path GetDefaultDataDir()
     // Mac
     pathRet /= "Library/Application Support";
     TryCreateDirectory(pathRet);
-    return pathRet / "Bitcoin";
+    return pathRet / "Unbreakablecoin";
 #else
     // Unix
-    return pathRet / ".bitcoin";
+    return pathRet / ".unbreakablecoin";
 #endif
 #endif
 }
