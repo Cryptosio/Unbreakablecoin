@@ -112,8 +112,8 @@ public:
         nTargetSpacing = 10 * 60;
 
 		// ppcoin: sync-checkpoint master key
-		strMainPubKey = "04539d015bab66cdea15678cbbeadd627fd8e0b2bacfbdab85786d7ac3d3e2aafc73b00ed844fa43d210331aba4c96f58a36bcb40c87cf02dc117880e3fc49c1c9";
-		strTestPubKey = "04539d015bab66cdea15678cbbeadd627fd8e0b2bacfbdab85786d7ac3d3e2aafc73b00ed844fa43d210331aba4c96f58a36bcb40c87cf02dc117880e3fc49c1c9";
+		strMainPubKey = "041cfb19b8bfe534699a412ffa7b42e87338738b1e69c6f0f7ccabc793e686e796076c590663c87e55dbafdd9b5067de8d0d43705d53a58ffd3d966c05fef3a0af";
+		strTestPubKey = "041cfb19b8bfe534699a412ffa7b42e87338738b1e69c6f0f7ccabc793e686e796076c590663c87e55dbafdd9b5067de8d0d43705d53a58ffd3d966c05fef3a0af";
 
         /**
          * Build the genesis block. Note that the output of the genesis coinbase cannot
