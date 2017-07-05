@@ -2357,7 +2357,7 @@ bool SetBestChain(CValidationState &state, CBlockIndex* pindexNew)
     BOOST_FOREACH(CBlockIndex* pindex, vDisconnect) {
         CBlock block;
         if (!ReadBlockFromDisk(block, pindex))
-            return state.Abort(_("Failed to read block"));
+            return error("VerifyDB() : *** ReadBlockFromDisk failed at %d, hash=%s", pindex->nHeight, pindex->GetBlockHash().ToString());
         int64_t nStart = GetTimeMicros();
         bool fClean = true;
         if (!DisconnectBlock(block, state, pindex, view, &fClean))
