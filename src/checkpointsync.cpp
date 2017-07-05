@@ -443,17 +443,19 @@ bool CSyncCheckpoint::ProcessSyncCheckpoint(CNode* pfrom)
     if (mapBlockIndex.count(hashCheckpoint) == 0)
     {
         // We haven't received the checkpoint chain, keep the checkpoint as pending
-        hashPendingCheckpoint = hashCheckpoint;
-        checkpointMessagePending = *this;
-        LogPrintf("ProcessSyncCheckpoint: pending for sync-checkpoint %s\n", hashCheckpoint.ToString().c_str());
-        // Ask this guy to fill in what we're missing
-        if (pfrom)
-        {
-            pfrom->PushGetBlocks(pindexBestHeader, hashCheckpoint);
-            // ask directly as well in case rejected earlier by duplicate
-            // proof-of-stake because getblocks may not get it this time
-            pfrom->AskFor(CInv(MSG_BLOCK, mapOrphanBlocks.count(hashCheckpoint)? WantedByOrphan(mapOrphanBlocks[hashCheckpoint]) : hashCheckpoint));
-        }
+
+        // DISABLED FOR NOW
+        // hashPendingCheckpoint = hashCheckpoint;
+        // checkpointMessagePending = *this;
+        // LogPrintf("ProcessSyncCheckpoint: pending for sync-checkpoint %s\n", hashCheckpoint.ToString().c_str());
+        // // Ask this guy to fill in what we're missing
+        // if (pfrom)
+        // {
+        //     pfrom->PushGetBlocks(pindexBestHeader, hashCheckpoint);
+        //     // ask directly as well in case rejected earlier by duplicate
+        //     // proof-of-stake because getblocks may not get it this time
+        //     pfrom->AskFor(CInv(MSG_BLOCK, mapOrphanBlocks.count(hashCheckpoint)? WantedByOrphan(mapOrphanBlocks[hashCheckpoint]) : hashCheckpoint));
+        // }
         return false;
     }
 
