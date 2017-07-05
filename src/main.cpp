@@ -1209,14 +1209,14 @@ bool ReadBlockFromDisk(CBlock& block, const CDiskBlockPos& pos)
     // Open history file to read
     CAutoFile filein(OpenBlockFile(pos, true), SER_DISK, CLIENT_VERSION);
     if (filein.IsNull())
-        return error("ReadBlockFromDisk : OpenBlockFile failed for %s", pos.ToString());
+        return error("ReadBlockFromDisk : OpenBlockFile failed");
 
     // Read block
     try {
         filein >> block;
     }
     catch (std::exception &e) {
-        return error("%s : Deserialize or I/O error - %s at %s", __func__, e.what(), pos.ToString());
+        return error("%s : Deserialize or I/O error - %s", __func__, e.what());
     }
 
     // Check the header
@@ -1230,9 +1230,8 @@ bool ReadBlockFromDisk(CBlock& block, const CBlockIndex* pindex)
 {
     if (!ReadBlockFromDisk(block, pindex->GetBlockPos()))
         return false;
-
     if (block.GetHash() != pindex->GetBlockHash())
-		return error("ReadBlockFromDisk(CBlock&, CBlockIndex*): GetHash() doesn't match index for %s at %s", pindex->ToString(), pindex->GetBlockPos().ToString());
+        return error("ReadBlockFromDisk(CBlock&, CBlockIndex*) : GetHash() doesn't match index");
     return true;
 }
 
@@ -2358,7 +2357,7 @@ bool SetBestChain(CValidationState &state, CBlockIndex* pindexNew)
     BOOST_FOREACH(CBlockIndex* pindex, vDisconnect) {
         CBlock block;
         if (!ReadBlockFromDisk(block, pindex))
-            return error("VerifyDB() : *** ReadBlockFromDisk failed at %d, hash=%s", pindex->nHeight, pindex->GetBlockHash().ToString());
+            return state.Abort(_("Failed to read block"));
         int64_t nStart = GetTimeMicros();
         bool fClean = true;
         if (!DisconnectBlock(block, state, pindex, view, &fClean))
