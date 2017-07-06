@@ -464,15 +464,15 @@ bool CSyncCheckpoint::ProcessSyncCheckpoint(CNode* pfrom)
 
     CBlockIndex* pindexCheckpoint = mapBlockIndex[hashCheckpoint];
     if (IsSyncCheckpointEnforced() && !pindexCheckpoint->IsInMainChain())
-    {
+   /* {
         // checkpoint chain received but not yet main chain
-        CValidationState state;
+       CValidationState state;
         if (!SetBestChain(state, pindexCheckpoint))
         {
             hashInvalidCheckpoint = hashCheckpoint;
             return error("ProcessSyncCheckpoint: SetBestChain failed for sync checkpoint %s", hashCheckpoint.ToString().c_str());
         }
-    }
+    }*/
 
     if (!WriteSyncCheckpoint(hashCheckpoint))
         return error("ProcessSyncCheckpoint(): failed to write sync checkpoint %s", hashCheckpoint.ToString().c_str());
