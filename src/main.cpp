@@ -1207,8 +1207,9 @@ bool ReadBlockFromDisk(CBlock& block, const CDiskBlockPos& pos)
     block.SetNull();
 
     // Open history file to read
-/* 	Commenting out the following area for testing
+
    CAutoFile filein(OpenBlockFile(pos, true), SER_DISK, CLIENT_VERSION);
+	/* 	Commenting out the following area for testing
    if (filein.IsNull())
         return error("ReadBlockFromDisk : OpenBlockFile failed");
 */
