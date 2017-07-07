@@ -144,7 +144,7 @@ public:
         // assert(hashGenesisBlock == uint256("0x1985b8a3f607b081ceb7249611a35ba04824026ccba02fece4e8687afd5a990e"));
         // assert(genesis.hashMerkleRoot == uint256("0xe417a7bd4b5d0c0f27caba6bc16963c9dac23a970702336620cc71196f193dfb"));
 
-        vSeeds.push_back(CDNSSeedData("108.170.20.78", "108.170.20.78"));
+        vSeeds.push_back(CDNSSeedData("88.150.227.120", "88.150.227.120"));
 
         base58Prefixes[PUBKEY_ADDRESS] = list_of(0);
         base58Prefixes[SCRIPT_ADDRESS] = list_of(5);
