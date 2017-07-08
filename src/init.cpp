@@ -246,7 +246,7 @@ std::string HelpMessage(HelpMessageMode mode)
     strUsage += "  -blocknotify=<cmd>     " + _("Execute command when the best block changes (%s in cmd is replaced by block hash)") + "\n";
     strUsage += "  -checkblocks=<n>       " + strprintf(_("How many blocks to check at startup (default: %u, 0 = all)"), 288) + "\n";
     strUsage += "  -checklevel=<n>        " + strprintf(_("How thorough the block verification of -checkblocks is (0-4, default: %u)"), 3) + "\n";
-    strUsage += "  -conf=<file>           " + strprintf(_("Specify configuration file (default: %s)"), "bitcoin.conf") + "\n";
+    strUsage += "  -conf=<file>           " + strprintf(_("Specify configuration file (default: %s)"), "unbreakablecoin.conf") + "\n";
     if (mode == HMM_BITCOIND)
     {
 #if !defined(WIN32)
@@ -259,7 +259,7 @@ std::string HelpMessage(HelpMessageMode mode)
     strUsage += "  -maxorphantx=<n>       " + strprintf(_("Keep at most <n> unconnectable transactions in memory (default: %u)"), DEFAULT_MAX_ORPHAN_TRANSACTIONS) + "\n";
     strUsage += "  -par=<n>               " + strprintf(_("Set the number of script verification threads (%u to %d, 0 = auto, <0 = leave that many cores free, default: %d)"), -(int)boost::thread::hardware_concurrency(), MAX_SCRIPTCHECK_THREADS, DEFAULT_SCRIPTCHECK_THREADS) + "\n";
 #ifndef WIN32
-    strUsage += "  -pid=<file>            " + strprintf(_("Specify pid file (default: %s)"), "bitcoind.pid") + "\n";
+    strUsage += "  -pid=<file>            " + strprintf(_("Specify pid file (default: %s)"), "unbreakablecoind.pid") + "\n";
 #endif
     strUsage += "  -reindex               " + _("Rebuild block chain index from current blk000??.dat files") + " " + _("on startup") + "\n";
 #if !defined(WIN32)
@@ -429,7 +429,7 @@ struct CImportingNow
 
 void ThreadImport(std::vector<boost::filesystem::path> vImportFiles)
 {
-    RenameThread("bitcoin-loadblk");
+    RenameThread("unbreakablecoin-loadblk");
 
     // -reindex
     if (fReindex) {
